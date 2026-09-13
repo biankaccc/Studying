@@ -50,3 +50,5 @@ x86/
 *.bak
 .DS_Store
 Thumbs.db
+yes
+yes.pub
