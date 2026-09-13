@@ -1,6 +1,52 @@
+# PyCharm
 .idea/
 *.iml
+out/
+.venv/
+venv/
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
+*.log
+
+# MATLAB
+*.asv
+*.m~
+*.slx.auto_save
+*.mlx~
+*.fig
+*.mat
+*.slxc
+*.sldo
+*.prj.user
+cache/
+codegen/
+slprj/
+simulink_project/
+
+# Visual Studio 2022
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+bin/
+obj/
+Debug/
+Release/
+x64/
+x86/
+*.pdb
+*.exe
+*.ilk
+
+# 通用大文件/临时文件
+*.gz
+*.zip
+*.rar
+*.7z
+*.tmp
+*.bak
+.DS_Store
+Thumbs.db
