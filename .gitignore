@@ -1,14 +1,56 @@
 # PyCharm
-.idea/
-*.iml
-out/
-.venv/
-venv/
+# Python 缓存
 __pycache__/
-*.pyc
-*.pyo
-*.pyd
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# 虚拟环境
+venv/
+.venv/
+ENV/
+env/
+
+# 日志文件
 *.log
+
+# PyTorch权重、numpy数组文件
+*.pth
+*.pt
+*.npz
+*.npy
+
+# 测试缓存
+.pytest_cache/
+.mypy_cache/
+
+# IDE配置
+.idea/
+.vscode/
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# 密钥环境变量
+.env
+
 
 # MATLAB
 *.asv
