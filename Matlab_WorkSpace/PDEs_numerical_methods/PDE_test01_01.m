@@ -1,30 +1,38 @@
-%% 第1题 Euler法 & 改进Euler法
 clear;clc;
-f = @(x,y) 0.5*x;
-h = 0.1;
-x0 = 0; y0 = 0;
-x_end = 1;
-x = x0:h:x_end;
-n = length(x);
+f = @(t,y) -0.5*y;
+t0 = 0; y0 = 1;
+tend = 1; h = 0.1;
+t = t0:h:tend;
+N = length(t)-1;
 
-y_euler = zeros(1,n);
-y_improved = zeros(1,n);
-y_euler(1)=y0;
-y_improved(1)=y0;
-
-for i = 1:n-1
-    % Euler
-    y_euler(i+1) = y_euler(i) + h*f(x(i), y_euler(i));
-    % 改进Euler（预估校正）
-    yp = y_improved(i) + h*f(x(i), y_improved(i));
-    yc = y_improved(i) + h*f(x(i+1), yp);
-    y_improved(i+1) = (yp + yc)/2;
+% Euler法
+y_euler = zeros(size(t));
+y_euler(1) = y0;
+for n = 1:N
+    y_euler(n+1) = y_euler(n) + h*f(t(n), y_euler(n));
 end
 
-y_exact = 0.25*x.^2;    % 方程真实解析解
+% 改进Euler法
+y_improved = zeros(size(t));
+y_improved(1) = y0;
+for n = 1:N
+    y_pred = y_improved(n) + h*f(t(n), y_improved(n)); %预测
+    y_corr = y_improved(n) + h/2*( f(t(n),y_improved(n)) + f(t(n+1),y_pred) ); %校正
+    y_improved(n+1) = y_corr;
+end
 
-figure(1);
-plot(x,y_euler,'r-o',x,y_improved,'g-*',x,y_exact,'b-');
-legend('Euler','改进Euler','真实解析解y=0.25x^2');
-xlabel('x');ylabel('y');title('第1题 数值解对比 h=0.1');
+% 精确解
+y_exact = exp(-0.5*t);
+
+% 计算最大误差
+err_euler_max = max(abs(y_euler - y_exact));
+err_improved_max = max(abs(y_improved - y_exact));
+fprintf('Euler最大误差：%.6e\n',err_euler_max);
+fprintf('改进Euler最大误差：%.6e\n',err_improved_max);
+
+% 绘图
+plot(t,y_euler,'-o', t,y_improved,'-s', t,y_exact,'-k','LineWidth',1);
+legend('Euler','改进Euler','精确解 $y=e^{-t/2}$','Interpreter','latex');
+xlabel('t'); ylabel('y');
 grid on;
+title('Euler与改进Euler法对比');
