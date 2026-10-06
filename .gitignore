@@ -5,6 +5,7 @@ __pycache__/
 *$py.class
 *.so
 .Python
+data/
 build/
 develop-eggs/
 dist/
@@ -90,7 +91,6 @@ x86/
 *.7z
 *.tmp
 *.bak
-.DS_Store
-Thumbs.db
 yes
 yes.pub
+Pycharm_WorkSpace/Mnist_nub_ocr/data/
