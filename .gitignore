@@ -123,3 +123,6 @@ Jupyter_WorkSpace/DIP/**/*.docx
 Jupyter_WorkSpace/DIP/**/_scratch/
 Jupyter_WorkSpace/DIP/**/~$*
 Jupyter_WorkSpace/DIP/_tools/_eqcache/
+
+# ===================== 写作工具包（仅本地使用，不入库） =====================
+DSH_WorkSpace/_writing_tools/
