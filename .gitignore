@@ -116,3 +116,10 @@ x86/
 
 # ===================== 项目特定 =====================
 Pycharm_WorkSpace/Mnist_nub_ocr/data/
+
+# ===================== DIP 课设：只上传代码/文本，不上传 docx 与数据 =====================
+# data/、Data/、*.png、*.mp4(位于 data 内) 已由上面的通用规则排除，此处只需补 docx 与临时文件
+Jupyter_WorkSpace/DIP/**/*.docx
+Jupyter_WorkSpace/DIP/**/_scratch/
+Jupyter_WorkSpace/DIP/**/~$*
+Jupyter_WorkSpace/DIP/_tools/_eqcache/
